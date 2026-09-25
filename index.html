@@ -2,19 +2,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Huygens</title><meta name="theme-color" content="#5b5bd6">
 <meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Huygens">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%235b5bd6'/%3E%3Ctext x='50' y='64' font-size='46' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22Huygens%22%2C%22short_name%22%3A%22Huygens%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23f4f2ec%22%2C%22theme_color%22%3A%22%235b5bd6%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%2520xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%2520viewBox%3D%270%25200%2520100%2520100%27%253E%253Crect%2520width%3D%27100%27%2520height%3D%27100%27%2520rx%3D%2722%27%2520fill%3D%27%25235b5bd6%27%2F%253E%253Ctext%2520x%3D%2750%27%2520y%3D%2764%27%2520font-size%3D%2746%27%2520text-anchor%3D%27middle%27%2520fill%3D%27white%27%2520font-family%3D%27sans-serif%27%2520font-weight%3D%27700%27%253EH%253C%2Ftext%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22100x100%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%2C%22purpose%22%3A%22any%20maskable%22%7D%5D%7D">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
 
 
-:root { --bg: #f4f2ec; --card: #ffffff; --ink: #232025; --sub: #6b6570; --accent: #5b5bd6; --accent2: #2fa793; --warn: #d9694f; --line: #e7e3da; --shadow: 0 6px 18px rgba(40,30,60,.08); padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
+:root { --bg: #f4f2ec; --card: #ffffff; --ink: #232025; --sub: #6b6570; --accent: #5b5bd6; --accent2: #2fa793; --warn: #d9694f; --line: #e7e3da; --shadow: 0 3px 12px rgba(40,30,60,.05); padding-top: env(safe-area-inset-top,0px); padding-bottom: env(safe-area-inset-bottom,0px); }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --bg: #17151c; --card: #221f29; --ink: #f1eef7; --sub: #a79fb5; --line: #332f3d; --shadow: 0 6px 18px rgba(0,0,0,.4); }
+  :root:not([data-theme="light"]) { --bg: #17151c; --card: #221f29; --ink: #f1eef7; --sub: #a79fb5; --line: #332f3d; --shadow: 0 3px 14px rgba(0,0,0,.22); }
 }
 
-:root[data-theme="dark"] { --bg: #17151c; --card: #221f29; --ink: #f1eef7; --sub: #a79fb5; --line: #332f3d; --shadow: 0 6px 18px rgba(0,0,0,.4); }
+:root[data-theme="dark"] { --bg: #17151c; --card: #221f29; --ink: #f1eef7; --sub: #a79fb5; --line: #332f3d; --shadow: 0 3px 14px rgba(0,0,0,.22); }
 
 html { scroll-padding-top: env(safe-area-inset-top,0px); box-sizing: border-box; }
 
@@ -26,17 +28,21 @@ body { margin: 0px; background: var(--bg); color: var(--ink); font-family: Inter
 
 h1, h2, h3, .brand { font-family: Poppins, sans-serif; }
 
-header.top { padding: 18px 16px 10px; text-align: center; position: sticky; top: env(safe-area-inset-top,0px); background: var(--bg); z-index: 5; border-bottom: 1px solid var(--line); }
+header.top { padding: 12px 16px; display:flex; align-items:center; gap:10px; position: sticky; top: env(safe-area-inset-top,0px); background: var(--bg); z-index: 5; border-bottom: 1px solid var(--line); }
 
-.brand { font-size: 26px; font-weight: 700; letter-spacing: 0.5px; color: var(--accent); }
+.brandmark { width:34px;height:34px;border-radius:11px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:Poppins,sans-serif;font-weight:600;font-size:15px;flex:0 0 auto;box-shadow:var(--shadow);letter-spacing:0 }
 
-.tagline { font-weight: 600; margin-top: 2px; }
+.head-mid { flex:1;min-width:0;text-align:center }
 
-.quote { color: var(--sub); font-size: 13px; margin-top: 4px; font-style: italic; min-height: 16px; }
+.streak { font-size:12px;font-weight:600;color:var(--sub);flex:0 0 auto;white-space:nowrap }
 
-nav.tabs { display: flex; gap: 6px; overflow-x: auto; padding: 10px 12px; position: sticky; top: calc(env(safe-area-inset-top,0px) + 78px); background: var(--bg); z-index: 4; border-bottom: 1px solid var(--line); }
+.quote { color: var(--sub); font-size: 12.5px; margin-top: 1px; font-style: italic; min-height: 15px; font-weight:400; overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
 
-nav.tabs button { flex: 0 0 auto; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; background: var(--card); color: var(--sub); padding: 8px 14px; border-radius: 20px; font-weight: 600; font-size: 13px; cursor: pointer; box-shadow: var(--shadow); }
+nav.tabs { display: flex; gap: 6px; overflow-x: auto; padding: 8px 12px; position: sticky; top: calc(env(safe-area-inset-top,0px) + 58px); background: var(--bg); z-index: 4; border-bottom: 1px solid var(--line); }
+
+nav.tabs button { flex: 0 0 auto; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; background: var(--card); color: var(--sub); padding: 7px 13px; border-radius: 20px; font-weight: 500; font-size: 13px; cursor: pointer; box-shadow: 0 1px 4px rgba(40,30,60,.06); transition:transform .15s ease }
+
+nav.tabs button:active{transform:scale(.95)}
 
 nav.tabs button.active { background: var(--accent); color: rgb(255, 255, 255); }
 
@@ -51,9 +57,9 @@ section.active { display: block; animation: 0.2s ease 0s 1 normal none running f
   100% { opacity: 1; transform: translateY(0px); }
 }
 
-.card { background: var(--card); border-radius: 16px; padding: 14px; box-shadow: var(--shadow); margin-bottom: 14px; }
+.card { background: var(--card); border-radius: 16px; padding: 14px; box-shadow: var(--shadow); margin-bottom: 14px; border:1px solid var(--line); }
 
-.card h2 { margin: 0px 0px 10px; font-size: 16px; }
+.card h2 { margin: 0px 0px 10px; font-size: 15px; font-weight:600; }
 
 .row { display: flex; gap: 8px; flex-wrap: wrap; }
 
@@ -164,10 +170,18 @@ body.dragging{user-select:none;-webkit-user-select:none;cursor:grabbing}
 .swatch.on,.mode-btn.on{outline:3px solid var(--accent);outline-offset:1px}
 .cal{padding:8px 0;border-radius:8px;cursor:pointer;position:relative}.cal.sel{background:var(--accent);color:#fff}.cal.td{border:1px solid var(--accent)}
 .cal i{position:absolute;bottom:2px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--accent2)}
+.note{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px;font-size:13.5px;white-space:pre-wrap;line-height:1.45}
+.note.pinned{border-color:var(--accent)}
+.note.editing{border-color:var(--accent);box-shadow:var(--shadow)}
+.note-edit-box{border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--card);color:var(--ink);margin-top:4px;resize:vertical}
+.note .n-date{font-size:10.5px;color:var(--sub);margin-bottom:4px;display:flex;justify-content:space-between;align-items:center}
+.note .n-actions{text-align:right;margin-top:6px}
+.confetti-bit{position:fixed;top:-10px;z-index:99;border-radius:2px;pointer-events:none}
 </style></head><body>
-<header class="top"><div class="brand">HUYGENS</div><div class="tagline">something is better than nothing</div>
-<div class="quote" id="dailyQuote"></div><div class="quote" id="todayDate" style="font-style:normal;font-size:11px;opacity:.8"></div></header>
-<nav class="tabs"><button data-tab="tasks" class="active">✅ Tasks</button><button data-tab="finance">💰 Finance</button><button data-tab="focus">🎯 Focus</button><button data-tab="diary">📔 Diary</button><button data-tab="settings">⚙️ Settings</button></nav>
+<header class="top"><div class="brandmark" title="Huygens — something is better than nothing">H</div>
+<div class="head-mid"><div class="quote" id="dailyQuote"></div><div class="quote" id="todayDate" style="font-style:normal;font-size:11px;opacity:.75"></div></div>
+<div class="streak" id="streakBadge" title="Daily streak — finish a task each day to build it"></div></header>
+<nav class="tabs"><button data-tab="tasks" class="active">✅ Tasks</button><button data-tab="finance">💰 Finance</button><button data-tab="focus">🎯 Focus</button><button data-tab="notes">🗒️ Notes</button><button data-tab="settings">⚙️ Settings</button></nav>
 <main>
 <section id="tasks" class="active"><div class="card"><h2>Add a task</h2><div class="row">
 <input id="taskTxt" placeholder="What needs doing?" style="flex:2;min-width:150px">
@@ -190,13 +204,13 @@ body.dragging{user-select:none;-webkit-user-select:none;cursor:grabbing}
 <div class="row" style="align-items:center;margin-top:8px"><span class="small">Productivity:</span><div class="stars" id="manStars"></div><button class="btn" data-a="addMan">Add to graph</button></div></div>
 <div class="card"><h2>Your patterns</h2><p class="small">Minutes focused, last 7 days</p><canvas id="focusChart"></canvas><p class="small" style="margin-top:14px">Average rating by start hour</p><canvas id="hourChart"></canvas><p class="small" id="focusInsight" style="margin-top:8px"></p></div>
 <div class="card"><h2>Recent entries</h2><div id="sessionList"></div></div></section>
-<section id="diary"><div class="card"><div class="row" style="justify-content:space-between;align-items:center"><button class="btn ghost" data-a="calPrev">‹ Prev</button><h2 id="calLabel" style="margin:0"></h2><button class="btn ghost" data-a="calNext">Next ›</button></div>
-<div id="calGrid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:12px;text-align:center;font-size:12px"></div><p class="small" style="margin-top:8px">Days with a dot have an entry. Tap any date to read or edit it.</p></div>
-<div class="card"><h2 id="entryDateLabel"></h2><textarea id="diaryInput" rows="5" style="width:100%;font-family:inherit" placeholder="What did you learn today? What mistake will you not repeat?"></textarea>
-<div style="text-align:right;margin-top:8px"><button class="btn" data-a="saveDiary">Save entry</button></div><div class="diary-page" id="diaryPages" style="margin-top:14px"></div></div></section>
+<section id="notes"><div class="card"><h2>New note</h2>
+<textarea id="noteInput" rows="3" style="width:100%;font-family:inherit" placeholder="Jot a thought, idea, or something to remember..."></textarea>
+<div style="text-align:right;margin-top:8px"><button class="btn" data-a="addNote">Add note</button></div></div>
+<div class="card"><h2>Your notes</h2><div id="notesList"></div></div></section>
 <section id="settings">
 <div class="card"><h2>Account &amp; cloud sync</h2><div id="cloudBox"></div></div>
-<div class="card"><h2>Install on your home screen</h2><p class="small">Opens Huygens full-screen like an app.</p><button class="btn" data-a="install">Add Huygens to home screen</button><p class="small" id="installStatus" style="margin-top:8px">On iPhone: Share icon in Safari → "Add to Home Screen".</p></div>
+<div class="card"><h2>Install on your home screen</h2><p class="small">Opens Huygens full-screen, no browser bar.</p><button class="btn" data-a="install">Add Huygens to home screen</button><p class="small" id="installStatus" style="margin-top:8px"></p></div>
 <div class="card"><h2>Notifications</h2><p class="small">Daily nudge + reminders for timed tasks while this page is open.</p><div class="row"><button class="btn" data-a="notifOn">Enable notifications</button><button class="btn ghost" data-a="notifTest">Send test</button></div><p class="small" id="notifStatus" style="margin-top:8px"></p></div>
 <div class="card"><h2>Light / Dark</h2><div class="row"><button class="btn ghost" data-a="th" data-v="light">Light</button><button class="btn ghost" data-a="th" data-v="dark">Dark</button><button class="btn ghost" data-a="th" data-v="auto">Auto</button></div></div>
 <div class="card"><h2>Accent colour</h2><p class="small">Saved automatically — it stays after refresh.</p><div id="colorSwatches" class="row" style="gap:10px;align-items:center"></div></div>
@@ -211,7 +225,7 @@ body.dragging{user-select:none;-webkit-user-select:none;cursor:grabbing}
 <div id="tacPanel" class="tac-panel"><div class="tac-head"><span style="font-weight:700">🤖 Tac</span><div><button class="icon-btn" data-a="tacSet" style="font-size:18px">⋯</button><button class="icon-btn" data-a="tacClose" style="font-size:16px">✕</button></div></div>
 <div class="tac-bar"><select id="chatSel"></select><button class="btn ghost" data-a="newChat" title="New chat">＋</button><button class="btn ghost" data-a="clearChat" title="Clear this chat">🧹</button><button class="btn ghost" data-a="delChat" title="Delete chat">🗑</button></div>
 <div id="tacSettingsBox" style="display:none;padding:10px;border-bottom:1px solid var(--line);overflow-y:auto">
-<p class="small">Pick a provider and paste your own key. It stays in this browser (never synced) and goes only to the provider you choose.</p>
+<p class="small">Pick a provider and paste your own key. It stays in this browser (never synced) and goes only to the provider you choose. Tac can also make real changes for you now — try "add a task to study tomorrow at 6pm" or "switch me to night mode".</p>
 <div class="row" style="margin-top:6px"><select id="aiProvider" style="flex:1"><option value="gemini">Google Gemini</option><option value="openai">OpenAI (ChatGPT)</option><option value="grok">xAI (Grok)</option></select></div>
 <div class="row" style="margin-top:6px"><input type="password" id="aiKey" placeholder="API key" style="flex:2;min-width:140px"><input id="aiModel" placeholder="Model" style="width:130px"></div>
 <div style="text-align:right;margin-top:6px"><button class="btn" style="padding:6px 12px;font-size:12px" data-a="saveAI">Save connection</button></div><p class="small" id="aiStatus" style="margin-top:4px"></p>
@@ -222,11 +236,13 @@ body.dragging{user-select:none;-webkit-user-select:none;cursor:grabbing}
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],KEY='huygens.v2';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])),uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 const pad=n=>String(n).padStart(2,'0'),ymd=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`,today=()=>ymd(new Date()),dmy=s=>s.split('-').reverse().join('/');
-const DP='You are Tac, a blunt but warm accountability coach inside the Huygens productivity app. Reply in 2-4 short sentences. Use the user\'s real tasks, budget and focus data when relevant, and push them toward one concrete next action.';
+const DP='You are Tac, a blunt but warm accountability coach inside the Huygens productivity app. Reply in 2-4 short sentences. Use the user\'s real tasks, budget and focus data when relevant, and push them toward one concrete next action.\n\nYou are also allowed to make real changes in the app when the user asks you to (add/finish/remove a task, save a note, or change the theme). To do this, end your reply with one line per change, exactly in this format (the user will not see this line, only its effect): [ACTION]{"do":"addTask","text":"...","bucket":"tomorrow|week|month|quarter|year|longterm","time":"HH:MM"}[/ACTION]. Other actions: {"do":"toggleDone","text":"..."} to check/uncheck a task matching that text, {"do":"delTask","text":"..."} to remove one, {"do":"addNote","text":"..."} to save a note, {"do":"setAccent","hex":"#5b5bd6"}, {"do":"setMode","mode":"default|summer|winter|night|autumn|spring|ocean"}, {"do":"setTheme","theme":"light|dark|auto"}. Only emit an action when the user actually asked for that change, never invent data, and keep your normal reply short and above the action tag(s).';
 const DM={gemini:'gemini-2.5-flash',openai:'gpt-4o-mini',grok:'grok-3-mini'};
-const def=()=>({tasks:[],exp:[],budget:0,sess:[],diary:{},chats:[],cur:null,prompt:DP,set:{mode:'default',theme:'auto',accent:null,corner:'br',cur:'₹',daily:1,last:''},ai:{p:'gemini',keys:{},models:{}},fb:null,t:0});
+const def=()=>({tasks:[],exp:[],budget:0,sess:[],notes:[],chats:[],cur:null,prompt:DP,set:{mode:'default',theme:'auto',accent:null,corner:'br',cur:'₹',daily:1,last:''},ai:{p:'gemini',keys:{},models:{}},fb:null,t:0});
 let S=load();
-function load(){try{const s=JSON.parse(localStorage.getItem(KEY));if(s){const d=def();return{...d,...s,set:{...d.set,...s.set},ai:{...d.ai,...s.ai}}}}catch{}const d=def();try{legacy(d)}catch{}return d}
+function load(){try{const s=JSON.parse(localStorage.getItem(KEY));if(s){const d=def();const merged={...d,...s,set:{...d.set,...s.set},ai:{...d.ai,...s.ai}};
+if(s.diary&&typeof s.diary==='object'&&!(merged.notes&&merged.notes.length)){merged.notes=Object.entries(s.diary).filter(([,v])=>v).map(([dt,tx])=>({id:uid(),txt:String(tx),t:(new Date(dt+'T12:00').getTime())||Date.now(),pin:0}))}
+delete merged.diary;return merged}}catch{}const d=def();try{legacy(d)}catch{}return d}
 function nd(s){s=String(s||'');const m=s.match(/^(\d\d)\/(\d\d)\/(\d{4})/);return m?`${m[3]}-${m[2]}-${m[1]}`:/^\d{4}-\d\d-\d\d/.test(s)?s.slice(0,10):today()}
 function legacy(d,src){src=src||Object.fromEntries(Object.keys(localStorage).filter(k=>k!==KEY).map(k=>[k,localStorage.getItem(k)]));let n=0;
 for(const[k,v]of Object.entries(src)){let j=v;if(typeof v==='string'){try{j=JSON.parse(v)}catch{j=v}}
@@ -234,13 +250,14 @@ if(Array.isArray(j)&&j[0]&&typeof j[0]==='object'){const f=j[0];
 if('bucket'in f){d.tasks=j.map(x=>({id:String(x.id||uid()),txt:x.txt||x.text||x.title||'',bucket:x.bucket||'week',time:x.time||'',done:!!(x.done||x.completed),prio:+(x.prio??x.priority)||0,day:''}));n++}
 else if('amt'in f||'amount'in f){d.exp=j.map(x=>({id:String(x.id||uid()),desc:x.desc||x.description||x.name||'',amt:+(x.amt??x.amount)||0,cat:x.cat||x.category||'Other',date:nd(x.date)}));n++}
 else if('stars'in f||'rating'in f||'mins'in f){d.sess=j.map(x=>({id:String(x.id||uid()),date:nd(x.date),s:x.start||x.s||'',e:x.end||x.e||'',h:+(x.hour??((x.start||x.s||'0').split(':')[0]))||0,mins:+(x.mins??x.minutes??x.dur)||0,stars:+(x.stars??x.rating??x.rate)||3}));n++}}
-else if(j&&typeof j==='object'&&!Array.isArray(j)&&/diary|journal/i.test(k)){for(const[a,b]of Object.entries(j))d.diary[nd(a)]=typeof b==='string'?b:b.text||'';n++}
+else if(j&&typeof j==='object'&&!Array.isArray(j)&&/diary|journal/i.test(k)){for(const[a,b]of Object.entries(j)){const tx=typeof b==='string'?b:b.text||'';if(tx)d.notes.push({id:uid(),txt:tx,t:(new Date(nd(a)+'T12:00').getTime())||Date.now(),pin:0})}n++}
 else if(/budget/i.test(k)&&+j){d.budget=+j;n++}
 else if(typeof j==='string'&&/prompt/i.test(k)){d.prompt=j;n++}
 else if(typeof j==='string'&&/key/i.test(k)){const p=/gemini/i.test(k)?'gemini':/openai|gpt/i.test(k)?'openai':/grok|xai/i.test(k)?'grok':null;if(p){d.ai.keys[p]=j;n++}}}
 return n}
-let pt;const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch{toast('Storage full — export a backup')}};
+let pt;const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));return true}catch(e){toast('Storage full — export a backup');return false}};
 function save(){S.t=Date.now();persist();clearTimeout(pt);if(user)pt=setTimeout(push,1500)}
+addEventListener('pagehide',persist);addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')persist()});
 let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2400)}
 /* ---------- theme ---------- */
 const M={summer:{bg:'#fff6e5',card:'#fffdf7',ink:'#3a2a12',sub:'#8a6f4a',line:'#f0dfbf',accent:'#f59e0b',accent2:'#ef6c4d'},winter:{bg:'#eef4fb',card:'#ffffff',ink:'#1b2a3a',sub:'#5f7489',line:'#d6e2ef',accent:'#3b82c4',accent2:'#7dd3fc'},
@@ -292,12 +309,21 @@ function rTracks(){$('#trackList').innerHTML=TR.map(([n],i)=>`<div class="track-
 let sn,cel;function stopSnd(){sn&&sn.stop();sn=null;cel&&cel.pause();cel=null;snd=null}
 function play(i){const was=snd===i;stopSnd();if(was)return rTracks();AC=AC||new AudioContext();AC.resume();const b=AC.createBuffer(1,AC.sampleRate*2,AC.sampleRate),d=b.getChannelData(0);let l=0;for(let k=0;k<d.length;k++){const w=Math.random()*2-1;d[k]=i===1?(l=(l+.02*w)/1.02)*3.5:w*(i===2?.6:.3)}
 const n=AC.createBufferSource();n.buffer=b;n.loop=true;let out=n;if(i===2){const f=AC.createBiquadFilter();f.type='lowpass';f.frequency.value=2200;n.connect(f);out=f}out.connect(AC.destination);n.start();sn=n;snd=i;rTracks()}
-/* ---------- diary ---------- */
-let calM=new Date(),selD=today();calM.setDate(1);
-function rDiary(){$('#calLabel').textContent=calM.toLocaleDateString('en-GB',{month:'long',year:'numeric'});const y=calM.getFullYear(),m=calM.getMonth(),n=new Date(y,m+1,0).getDate();let h=['S','M','T','W','T','F','S'].map(x=>`<div class="small" style="font-weight:700">${x}</div>`).join('')+'<div></div>'.repeat(new Date(y,m,1).getDay());
-for(let d=1;d<=n;d++){const k=`${y}-${pad(m+1)}-${pad(d)}`;h+=`<div class="cal ${k===selD?'sel':''} ${k===today()?'td':''}" data-d="${k}">${d}${S.diary[k]?'<i></i>':''}</div>`}$('#calGrid').innerHTML=h;
-$('#entryDateLabel').textContent=new Date(selD+'T12:00').toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('#diaryInput').value=S.diary[selD]||'';
-$('#diaryPages').innerHTML=Object.keys(S.diary).filter(k=>S.diary[k]).sort().reverse().slice(0,6).map(k=>`<div class="diary-entry"><div class="d-date">${dmy(k)}</div>${esc(S.diary[k])}</div>`).join('')||'<div class="diary-entry">Nothing written yet.</div>'}
+/* ---------- notes ---------- */
+let editingNote=null;
+function rNotes(){const list=S.notes.slice().sort((a,b)=>(b.pin-a.pin)||b.t-a.t);
+$('#notesList').innerHTML=list.length?list.map(n=>n.id===editingNote?
+`<div class="note editing" data-id="${n.id}"><div class="n-date">${new Date(n.t).toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}</div><textarea class="note-edit-box" rows="4" style="width:100%;font-family:inherit">${esc(n.txt)}</textarea><div class="n-actions"><button class="btn ghost" data-a="cancelNoteEdit" style="padding:6px 12px;font-size:12px">Cancel</button><button class="btn" data-a="saveNoteEdit" style="padding:6px 12px;font-size:12px">Save</button></div></div>`
+:`<div class="note ${n.pin?'pinned':''}" data-id="${n.id}"><div class="n-date"><span>${new Date(n.t).toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}${n.pin?' · 📌 pinned':''}</span></div>${esc(n.txt)}<div class="n-actions"><button class="icon-btn" data-a="pinNote" title="Pin">📌</button><button class="icon-btn" data-a="editNote">✎</button><button class="icon-btn" data-a="delNote">✕</button></div></div>`
+).join(''):'<p class="small">No notes yet — jot something above.</p>';
+if(editingNote){const ta=$('.note-edit-box');if(ta){ta.focus();ta.setSelectionRange(ta.value.length,ta.value.length)}}}
+/* ---------- streak & confetti (surprise) ---------- */
+function updateStreak(){let n=0,d=new Date();for(;;){const k=ymd(d);if(!S.tasks.some(t=>t.doneDate===k))break;n++;d.setDate(d.getDate()-1)}
+$('#streakBadge').innerHTML=n?`🔥 ${n}`:'';if(n>0&&n%5===0&&S.set._cel!==n){S.set._cel=n;save();confetti(n)}}
+function confetti(n){const cs=getComputedStyle(document.documentElement),cols=[cs.getPropertyValue('--accent'),cs.getPropertyValue('--accent2'),'#f2c14e','#34d399'];
+for(let i=0;i<26;i++){const s=document.createElement('div');s.className='confetti-bit';s.style.left=Math.random()*100+'vw';s.style.width=s.style.height=(5+Math.random()*4)+'px';s.style.background=cols[i%cols.length];s.style.opacity='1';s.style.transition='transform 1.5s ease-in, opacity 1.5s ease-in';document.body.append(s);
+requestAnimationFrame(()=>{s.style.transform=`translateY(${55+Math.random()*30}vh) rotate(${Math.random()*420}deg)`;s.style.opacity='0'});setTimeout(()=>s.remove(),1600)}
+toast(`🔥 ${n}-day streak! Keep going.`)}
 /* ---------- notifications & quotes ---------- */
 const Q=['Done is better than perfect.','Small steps, every day.','Start before you feel ready.','Discipline is choosing what you want most over what you want now.','You don\'t need more time, you need a start.','Progress, not perfection.','One focused hour beats a distracted day.'];
 function notify(t,b){if('Notification'in window&&Notification.permission==='granted')try{new Notification(t,{body:b})}catch{}else toast(b)}
@@ -316,12 +342,26 @@ async function ask(key,h,on,sig){const p=S.ai.p,m=S.ai.models[p]||DM[p],s=sys(),
 if(p==='gemini'){let last;const body=th=>JSON.stringify({systemInstruction:{parts:[{text:s}]},contents:h.map(x=>({role:x.role==='user'?'user':'model',parts:[{text:x.text}]})),generationConfig:{maxOutputTokens:700,...(th?{thinkingConfig:{thinkingBudget:0}}:{})}});
 for(const[mm,th]of[[m,1],[m,0],['gemini-2.5-flash-lite',0]]){try{return await stream(`https://generativelanguage.googleapis.com/v1beta/models/${mm}:streamGenerateContent?alt=sse`,{method:'POST',headers:{...H,'x-goog-api-key':key},body:body(th)},j=>j.candidates?.[0]?.content?.parts?.map(x=>x.text||'').join(''),on,sig)}catch(e){last=e;if(e.name==='AbortError'||!(e.status>=500||e.status===429||(th&&e.status===400)))break}}throw last}
 return stream(p==='openai'?'https://api.openai.com/v1/chat/completions':'https://api.x.ai/v1/chat/completions',{method:'POST',headers:{...H,Authorization:'Bearer '+key},body:JSON.stringify({model:m,stream:true,max_tokens:700,messages:[{role:'system',content:s},...h.map(x=>({role:x.role,content:x.text}))]})},j=>j.choices?.[0]?.delta?.content,on,sig)}
+/* ---------- Tac's app-control actions ---------- */
+function execAction(o){try{switch(o.do){
+case'addTask':if(!o.text)return null;S.tasks.push({id:uid(),txt:o.text,bucket:B.some(b=>b[0]===o.bucket)?o.bucket:'week',time:o.time||'',done:false,prio:0,day:today()});rTasks();return'added task "'+o.text+'"';
+case'toggleDone':{const t=S.tasks.find(t=>t.txt.toLowerCase().includes(String(o.text||'').toLowerCase()));if(!t)return null;t.done=!t.done;t.done?t.doneDate=today():delete t.doneDate;rTasks();updateStreak();return(t.done?'checked off "':'reopened "')+t.txt+'"'}
+case'delTask':{const t=S.tasks.find(t=>t.txt.toLowerCase().includes(String(o.text||'').toLowerCase()));if(!t)return null;S.tasks=S.tasks.filter(x=>x!==t);rTasks();return'removed "'+t.txt+'"'}
+case'addNote':if(!o.text)return null;S.notes.unshift({id:uid(),txt:o.text,t:Date.now(),pin:0});rNotes();return'saved a note';
+case'setAccent':if(!/^#[0-9a-f]{6}$/i.test(o.hex||''))return null;S.set.accent=o.hex;theme();return'changed the accent colour';
+case'setMode':if(!MN[o.mode])return null;S.set.mode=o.mode;S.set.accent=null;theme();return'switched theme to '+MN[o.mode];
+case'setTheme':if(!['light','dark','auto'].includes(o.theme))return null;S.set.theme=o.theme;S.set.mode='default';theme();return'switched to '+o.theme+' mode';
+}}catch{}return null}
+function runActions(text){let did=0;const out=text.replace(/\[ACTION\]\s*(\{[\s\S]*?\})\s*\[\/ACTION\]/g,(m,j)=>{try{const o=JSON.parse(j),r=execAction(o);if(r){did++;toast('Tac '+r);return''}}catch{}return''});
+if(did)save();return out.trim()}
 function errMsg(e){if(!e.status)return'Could not reach the provider. Check your connection.';let d='';try{d=JSON.parse(e.body).error.message||JSON.parse(e.body).error}catch{}
 return(e.status===401||e.status===403||/api key/i.test(d)?'Your API key was rejected — check it in ⋯ settings.':e.status===429?'Rate limit reached — wait a few seconds and retry.':`The provider returned an error (${e.status}).`)+(d?' '+String(d).slice(0,140):'')}
-let ab;async function send(){if(ab)return ab.abort();const inp=$('#tacInput'),t=inp.value.trim();if(!t)return;const c=cur(),key=S.ai.keys[S.ai.p];c.m.push({r:'user',t});if(c.title==='New chat')c.title=t.slice(0,28);inp.value='';
+let ab,manualStop=false;async function send(){if(ab){manualStop=true;return ab.abort()}const inp=$('#tacInput'),t=inp.value.trim();if(!t)return;const c=cur(),key=S.ai.keys[S.ai.p];c.m.push({r:'user',t});if(c.title==='New chat')c.title=t.slice(0,28);inp.value='';
 const a={r:'tac',t:''};c.m.push(a);if(!key){a.r='err';a.t='Add your API key first (tap ⋯ in the panel header).';rChat();return save()}rChat();
 const el=chat.lastChild,h=c.m.slice(-15,-1).filter(m=>m.r!=='err'&&m.t).map(m=>({role:m.r==='user'?'user':'assistant',text:m.t}));ab=new AbortController();$('#tacSend').textContent='■';
-try{await ask(key,h,x=>{a.t+=x;el.textContent=a.t;chat.scrollTop=chat.scrollHeight},ab.signal)}catch(e){if(e.name==='AbortError'){a.t=a.t||'(stopped)'}else{a.r='err';a.t=errMsg(e)}}
+const wd=setTimeout(()=>{if(!a.t)ab.abort()},16000);
+try{await ask(key,h,x=>{a.t+=x;el.textContent=a.t;chat.scrollTop=chat.scrollHeight},ab.signal)}catch(e){if(e.name==='AbortError'){if(manualStop)a.t=a.t||'(stopped)';else{a.r='err';a.t=a.t||'⚠️ No response after 16s — the provider is slow or unreachable right now. Try again, or check your key/model in ⋯ settings.'}}else{a.r='err';a.t=errMsg(e)}}
+clearTimeout(wd);manualStop=false;if(a.r!=='err')a.t=runActions(a.t);
 ab=null;$('#tacSend').textContent='➤';if(!a.t){a.r='err';a.t='Empty reply — try again.'}rChat();save()}
 /* ---------- bubble drag & corners ---------- */
 const bub=$('#tacBubble'),pan=$('#tacPanel');
@@ -346,7 +386,7 @@ document.addEventListener('click',async e=>{const b=e.target.closest('[data-a]')
 switch(a){
 case'addTask':{const t=v$('#taskTxt');if(!t)return;S.tasks.push({id:uid(),txt:t,bucket:$('#taskBucket').value,time:$('#taskTime').value,done:false,prio:0,day:today()});$('#taskTxt').value='';$('#taskTime').value='';save();rTasks();break}
 case'prio':{const t=S.tasks.find(x=>x.id===id);t.prio=((t.prio||0)+1)%3;save();rTasks();break}
-case'done':{const t=S.tasks.find(x=>x.id===id);t.done=b.checked;save();rTasks();break}
+case'done':{const t=S.tasks.find(x=>x.id===id);t.done=b.checked;if(t.done)t.doneDate=today();else delete t.doneDate;save();rTasks();updateStreak();break}
 case'editTask':{const t=S.tasks.find(x=>x.id===id),n=prompt('Edit task',t.txt);if(n!==null&&n.trim()){t.txt=n.trim();save();rTasks()}break}
 case'delTask':S.tasks=S.tasks.filter(x=>x.id!==id);save();rTasks();break;
 case'saveBudget':S.budget=+$('#budgetInput').value||0;save();rFin();toast('Budget saved');break;
@@ -361,14 +401,18 @@ case'track':play(+v);break;case'stopSnd':stopSnd();rTracks();break;case'pickAudi
 case'addMan':{const d=$('#manDate').value||today(),s=$('#manStart').value,en=$('#manEnd').value;if(!s||!en)return toast('Pick start and end times');let m=(+en.slice(0,2)*60+ +en.slice(3))-(+s.slice(0,2)*60+ +s.slice(3));if(m<=0)m+=1440;addSess(d,s,en,m,man);toast('Added to graph');break}
 case'editSess':{const x=S.sess.find(x=>x.id===id),r=prompt('Productivity 1-5',x.stars);if(r&&+r>=1&&+r<=5){x.stars=Math.round(+r);save();rFocus()}break}
 case'delSess':S.sess=S.sess.filter(x=>x.id!==id);save();rFocus();break;
-case'calPrev':calM.setMonth(calM.getMonth()-1);rDiary();break;case'calNext':calM.setMonth(calM.getMonth()+1);rDiary();break;
-case'saveDiary':{const t=$('#diaryInput').value.trim();t?S.diary[selD]=t:delete S.diary[selD];save();rDiary();toast('Entry saved');break}
-case'install':if(window.dp){dp.prompt();dp=null}else toast('Use your browser menu → Install / Add to Home Screen');break;
+case'addNote':{const t=$('#noteInput').value.trim();if(!t)return;S.notes.unshift({id:uid(),txt:t,t:Date.now(),pin:0});$('#noteInput').value='';save();rNotes();toast('Note saved');break}
+case'editNote':editingNote=id;rNotes();break;
+case'saveNoteEdit':{const n=S.notes.find(x=>x.id===editingNote),ta=$('.note-edit-box'),v=ta?ta.value.trim():'';if(n&&v){n.txt=v;save();toast('Note saved')}editingNote=null;rNotes();break}
+case'cancelNoteEdit':editingNote=null;rNotes();break;
+case'delNote':S.notes=S.notes.filter(x=>x.id!==id);if(editingNote===id)editingNote=null;save();rNotes();break;
+case'pinNote':{const n=S.notes.find(x=>x.id===id);n.pin=n.pin?0:1;save();rNotes();break}
+case'install':if(window.dp){dp.prompt();dp=null}else if(location.protocol==='file:')toast('Local files can\'t show the native install prompt — open the hosted link instead, or use your browser\'s ⋮ menu → Add to Home Screen.');else toast('Use your browser menu → Install app / Add to Home Screen');break;
 case'notifOn':if('Notification'in window)await Notification.requestPermission();rNotif();break;
 case'notifTest':notify('Huygens',Q[0]);break;
-case'th':S.set.theme=v;S.set.mode='default';save();theme();break;
-case'acc':S.set.accent=v;save();theme();break;
-case'mode':S.set.mode=v;S.set.accent=null;save();theme();break;
+case'th':S.set.theme=v;S.set.mode='default';save();theme();toast('Saved ✓');break;
+case'acc':S.set.accent=v;save();theme();toast('Saved ✓');break;
+case'mode':S.set.mode=v;S.set.accent=null;save();theme();toast('Saved ✓');break;
 case'export':{const o={...cloud()};const l=document.createElement('a');l.href=URL.createObjectURL(new Blob([JSON.stringify(o,null,1)],{type:'application/json'}));l.download='huygens-backup-'+today()+'.json';l.click();break}
 case'import':$('#impFile').click();break;
 case'paste':{const t=prompt('Paste your data here (backup JSON, or the output of  copy(JSON.stringify(localStorage))  run in the old app\'s console)');if(t)imp(t);break}
@@ -388,17 +432,17 @@ case'send':send();break}});
 function imp(t){try{const j=JSON.parse(t);if(Array.isArray(j.tasks)&&j.exp)S={...def(),...j,ai:S.ai,fb:S.fb};else{const d={...S};if(!legacy(d,j))return toast('Nothing recognisable found');S=d}save();all();toast('Data imported')}catch{toast('Could not read that data')}}
 $('#impFile').onchange=async e=>{const f=e.target.files[0];if(f)imp(await f.text());e.target.value=''};
 $('#customAudioFile').onchange=e=>{const f=e.target.files[0];if(!f)return;stopSnd();const el=new Audio(URL.createObjectURL(f));el.loop=true;el.play();el.n=f.name;cel=el;rTracks()};
-$('#calGrid').onclick=e=>{const c=e.target.closest('[data-d]');if(c){selD=c.dataset.d;rDiary()}};
 $('#chatSel').onchange=e=>{S.cur=e.target.value;save();rChat()};
 $('#aiProvider').onchange=e=>{S.ai.p=e.target.value;rAI()};
 $('#tacInput').onkeydown=e=>{if(e.key==='Enter')send()};
 $('#taskTxt').onkeydown=e=>{if(e.key==='Enter')$('[data-a=addTask]').click()};
-document.addEventListener('input',e=>{if(e.target.id==='customColor'){S.set.accent=e.target.value;theme()}else if(e.target.id==='curSym'){S.set.cur=e.target.value||'₹';save();rFin()}});
-document.addEventListener('change',e=>{if(e.target.id==='customColor')save();else if(e.target.id==='dailyOn'){S.set.daily=e.target.checked?1:0;save()}});
+let cct;document.addEventListener('input',e=>{if(e.target.id==='customColor'){S.set.accent=e.target.value;theme();clearTimeout(cct);cct=setTimeout(()=>{save();toast('Saved ✓')},250)}else if(e.target.id==='curSym'){S.set.cur=e.target.value||'₹';save();rFin()}});
+document.addEventListener('change',e=>{if(e.target.id==='customColor'){save();toast('Saved ✓')}else if(e.target.id==='dailyOn'){S.set.daily=e.target.checked?1:0;save()}});
 $$('nav.tabs button').forEach(b=>b.onclick=()=>{$$('nav.tabs button,main section').forEach(x=>x.classList.remove('active'));b.classList.add('active');$('#'+b.dataset.tab).classList.add('active');if(b.dataset.tab==='focus')rFocus()});
 addEventListener('beforeinstallprompt',e=>{e.preventDefault();window.dp=e});
-function all(){theme();rTasks();rFin();rFocus();rDiary();rChat();rAI();rCloud();rNotif();place();$('#curSym').value=cs();$('#dailyOn').checked=!!S.set.daily;$('#budgetInput').value=S.budget||''}
+function all(){theme();rTasks();rFin();rFocus();rNotes();rChat();rAI();rCloud();rNotif();place();updateStreak();$('#curSym').value=cs();$('#dailyOn').checked=!!S.set.daily;$('#budgetInput').value=S.budget||''}
 $('#dailyQuote').textContent=Q[Math.floor(Date.now()/864e5)%Q.length];$('#todayDate').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+$('#installStatus').innerHTML=location.protocol==='file:'?'You\'re opening a downloaded file — Chrome only shows the real "Install app" prompt for pages served over https. Host this file (e.g. GitHub Pages) or use the link Claude published for you, then tap Install here. On iPhone Safari: Share icon → "Add to Home Screen" (works even from a local file).':'On Android/Chrome this may install directly. On iPhone: open the Share icon in Safari → "Add to Home Screen".';
 $('#manDate').value=today();$('#timerDisplay').textContent='25:00';all();persist();fbInit();
 if(S.set.daily&&S.set.last!==today()&&'Notification'in window&&Notification.permission==='granted'){S.set.last=today();persist();notify('Huygens',$('#dailyQuote').textContent)}
 </script></body></html>
